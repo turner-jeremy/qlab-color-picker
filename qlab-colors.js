@@ -1,7 +1,3 @@
-{
-    "type": "module"
-  }
-
 const QLAB4_COLORS = [
     {
       color: "cerulean",
