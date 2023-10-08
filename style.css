@@ -4,9 +4,11 @@
     --qlabText: #c0c0c0;
 }
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-family: Montserrat, Verdana, Sans-Serif
 }
 
 body, html {
@@ -16,9 +18,15 @@ body, html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between;
+
     background-color: var(--qlabBackground);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
@@ -30,39 +38,99 @@ h1 {
     gap: 80px;
 }
 
-.version {
-    aspect-ratio: 1;
-    border-radius: 20px;
-    transition: .5s;
+.version-select img {
+    height: 150px;
+    padding: 20px;
+    border-radius: 40%;
+    margin: 0 20px;
+}
+
+.version-select img:hover {
     cursor: pointer;
-    padding: 12px;
-    -webkit-mask: 
-      linear-gradient(135deg,#000c 40%,#000,#000c 60%)
-      100% 100%/250% 250%;
-  }
-.version:hover {
-    -webkit-mask-position: 0 0;
-  }
+    border: solid thin var(--qlabText);
+}
 
 .selected {
-    animation: highlight 0.2 forwards;
+    box-shadow: inset 0 0 2em hsl(276, 94%, 74%);
 }
 
-@keyframes highlight {
-    100% {
-        background-color: var(--qlabText);
-        opacity: 1;}
+.syntax-options {
+    color: var(--qlabText);
+    display: block;
+    padding: 12px 0;
 }
 
-.hover-label {
+.radio-button {
+    display: flex;
+    font-weight: normal;
+    line-height: 1.1;
+    gap: 0.5em;
+}
+
+input[type="radio"] {
+    display: inline;
+appearance: none;
+margin: 0;
+width: 1.15em;
+height: 1.15em;
+border: 0.15em solid var(--qlabText);
+border-radius: 50%;
+color: var(--qlabText);
+transform: translateY(+0.075em);
+display: grid;
+place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    color: var(--qlabText);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 200ms transform ease-in-out;
+    box-shadow: inset 1em 1em hsl(276, 94%, 74%);
+  }
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+.radio-button + .radio-button {
+    margin-top: 1em;
+}
+#text-display {
     position: absolute;
-    top: 1;
-    z-index: 2;
-    /* margin: 0; */
-    color: white;
-    /* opacity: 0; */
+    bottom: 50vh;
+    margin: 0;
+    background-color: var(--qlabBackground);
+    border-radius: 0.5em;
+    color: var(--qlabText);
+    font-size: 18px;
+    min-height: 24px;
+    transition: 0.4s;
+    animation: fadeShadow 0.3s;
 }
 
+@keyframes fadeShadow {
+    0% {
+        opacity: 0;
+        box-shadow: 0 0 0;
+        line-height: 0;
+        border: none;}
+    50% {
+        box-shadow: 0 0 0.5em var(--qlabText);
+        line-height: 20px;
+        opacity: 0.75;
+        border: solid thin var(--qlabBorder);
+    }
+    100% {
+        box-shadow: 0 0 0;
+        line-height: 0;
+        opacity: 0;
+        border: none;
+    }
+}
 .color-container {
     display:flex;
     flex-wrap: wrap;
@@ -76,20 +144,15 @@ h1 {
     text-align: center;
     flex-direction: column;
     width: 120px;
+    height: 120px;
     margin: 2px;
-    border-style: none;
-    border-width: 2px;
     border-radius: 20px;
     color: var(--qlabText);
 }
 
 .color:hover {
-    animation: colorHover 0.25s forwards;
+    transition: 0.2s;
     cursor: pointer;
-}
-
-@keyframes colorHover {
-    100% {border-style: solid;}
 }
 
 .light,
@@ -107,4 +170,19 @@ h1 {
 .light {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+footer {
+    /* margin: em 0; */
+}
+footer p {
+    text-align: center;
+    color: var(--qlabText);
+    margin: 0.5em;
+    font-size: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--qlabText);
 }

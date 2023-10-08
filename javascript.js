@@ -1,633 +1,642 @@
 const QLAB4_COLORS = [
-    {
-      color: "cerulean",
-      display: "Cerulean",
-      dark: "#213d43",
-      light: "#264049",
-      highlight: "#008eb6"
-    },
-    {
-      color: "green",
-      display: "Green",
-      dark: "#20482d",
-      light: "#254d32",
-      highlight: "#00d12e"
-    },
-    {
-      color: "zaffre",
-      display: "Zaffre",
-      dark: "#282d40",
-      light: "#2d3345",
-      highlight: "#0f2680"
-    },
-    {
-      color: "viridian",
-      display: "Viridian",
-      dark: "#353b39",
-      light: "#39403e",
-      highlight: "#476b5f"
-    },
-    {
-      color: "blue",
-      display: "Blue",
-      dark: "#32394b",
-      light: "#383e51",
-      highlight: "#5273e0"
-    },
-    {
-      color: "verdigris",
-      display: "Verdigris",
-      dark: "#364242",
-      light: "#3b4746",
-      highlight: "#548f8d"
-    },
-    {
-      color: "wenge",
-      display: "Wenge",
-      dark: "#373634",
-      light: "#3c3a39",
-      highlight: "#574c4b"
-    },
-    {
-      color: "avocado",
-      display: "Avocado",
-      dark: "#373d25",
-      light: "#3a422a",
-      highlight: "#689100"
-    },
-    {
-      color: "olive",
-      display: "Olive",
-      dark: "#3b3b2c",
-      light: "#414131",
-      highlight: "#6c6b20"
-    },
-    {
-      color: "indigo",
-      display: "Indigo",
-      dark: "#373742",
-      light: "#3d3b46",
-      highlight: "#6d6aaa"
-    },
-    {
-      color: "glaucous",
-      display: "Glaucous",
-      dark: "#373e44",
-      light: "#3d424a",
-      highlight: "#7092c0"
-    },
-    {
-      color: "purple",
-      display: "Purple",
-      dark: "#3d2e42",
-      light: "#413346",
-      highlight: "#74288b"
-    },
-    {
-      color: "rufous",
-      display: "Rufous",
-      dark: "#3f2e2a",
-      light: "#44332f",
-      highlight: "#802b14"
-    },
-    {
-      color: "taupe",
-      display: "Taupe",
-      dark: "#423d39",
-      light: "#46433e",
-      highlight: "#89735f"
-    },
-    {
-      color: "skyblue",
-      display: "Sky Blue",
-      dark: "#3e4549",
-      light: "#444b4e",
-      highlight: "#8eb9cc"
-    },
-    {
-      color: "sage",
-      display: "Sage",
-      dark: "#43433e",
-      light: "#484843",
-      highlight: "#969278"
-    },
-    {
-      color: "puce",
-      display: "Puce",
-      dark: "#443d3f",
-      light: "#4a4344",
-      highlight: "#99757e"
-    },
-    {
-      color: "seaFoamGreen",
-      display: "Seafoam Green",
-      dark: "#454845",
-      light: "#4a4d4a",
-      highlight: "#9bab98"
-    },
-    {
-      color: "gray",
-      display: "Grey",
-      dark: "#404042",
-      light: "#444347",
-      highlight: "#a09daa"
-    },
-    {
-      color: "vermilion",
-      display: "Vermilion",
-      dark: "#473431",
-      light: "#4c3a36",
-      highlight: "#a54b39"
-    },
-    {
-      color: "scarlet",
-      display: "Scarlet",
-      dark: "#493331",
-      light: "#4e3636",
-      highlight: "#aa3b38"
-    },
-    {
-      color: "red",
-      display: "Red",
-      dark: "#4a3330",
-      light: "#4e3835",
-      highlight: "#ae4237"
-    },
-    {
-      color: "orange",
-      display: "Orange",
-      dark: "#4b3e2f",
-      light: "#504433",
-      highlight: "#b17c2a"
-    },
-    {
-      color: "celadon",
-      display: "Celadon",
-      dark: "#434b46",
-      light: "#495149",
-      highlight: "#b8e5bc"
-    },
-    {
-      color: "ochre",
-      display: "Ochre",
-      dark: "#443a2f",
-      light: "#4a4035",
-      highlight: "#cd8d40"
-    },
-    {
-      color: "ecru",
-      display: "Ecru",
-      dark: "#48443e",
-      light: "#4c4941",
-      highlight: "#cdbe93"
-    },
-    {
-      color: "lilac",
-      display: "Lilac",
-      dark: "#484248",
-      light: "#4c484c",
-      highlight: "#cfb0ce"
-    },
-    {
-      color: "mauve",
-      display: "Mauve",
-      dark: "#47434b",
-      light: "#4c4850",
-      highlight: "#e0c3fb"
-    },
-    {
-      color: "edgecombGray",
-      display: "Edgecomb Gray",
-      dark: "#4c4a49",
-      light: "#52504d",
-      highlight: "#e2dccf"
-    },
-    {
-      color: "chartreuse",
-      display: "Chartreuse",
-      dark: "#4c5122",
-      light: "#515528",
-      highlight: "#e4fa00"
-    },
-    {
-      color: "fulvous",
-      display: "Fulvous",
-      dark: "#4e3e25",
-      light: "#52432a",
-      highlight: "#eb9700"
-    },
-    {
-      color: "maize",
-      display: "Maize",
-      dark: "#514d37",
-      light: "#54533d",
-      highlight: "#f8ea6e"
-    },
-    {
-      color: "coral",
-      display: "Coral",
-      dark: "#523e36",
-      light: "#56413a",
-      highlight: "#fe9161"
-    },
-    {
-      color: "fuchsia",
-      display: "Fuchsia",
-      dark: "#523652",
-      light: "#563a56",
-      highlight: "#ff66ff"
-    },
-    {
-      color: "bastardAmber",
-      display: "Bastard Amber",
-      dark: "#524946",
-      light: "#564e4a",
-      highlight: "#ffd2c1"
-    },
-    {
-      color: "bisque",
-      display: "Bisque",
-      dark: "#524d48",
-      light: "#56514d",
-      highlight: "#ffeace"
-    }
-  ];
+  {
+    "color": "scarlet",
+    "display": "Scarlet",
+    "dark": "hsl(2, 21%, 24%)",
+    "light": "hsl(3, 18%, 26%)",
+    "highlight": "hsl(2, 79%, 61%)"
+  },
+  {
+    "color": "red",
+    "display": "Red",
+    "dark": "hsl(7, 21%, 24%)",
+    "light": "hsl(5, 19%, 26%)",
+    "highlight": "hsl(5, 81%, 61%)"
+  },
+  {
+    "color": "vermilion",
+    "display": "Vermilion",
+    "dark": "hsl(14, 19%, 23%)",
+    "light": "hsl(8, 17%, 25%)",
+    "highlight": "hsl(10, 66%, 58%)"
+  },
+  {
+    "color": "rufous",
+    "display": "Rufous",
+    "dark": "hsl(16, 21%, 20%)",
+    "light": "hsl(11, 18%, 23%)",
+    "highlight": "hsl(13, 73%, 39%)"
+  },
+  {
+    "color": "coral",
+    "display": "Coral",
+    "dark": "hsl(21, 16%, 25%)",
+    "light": "hsl(20, 15%, 27%)",
+    "highlight": "hsl(20, 82%, 68%)"
+  },
+  {
+    "color": "bastardAmber",
+    "display": "Bastard Amber",
+    "dark": "hsl(23, 6%, 27%)",
+    "light": "hsl(27, 6%, 30%)",
+    "highlight": "hsl(18, 77%, 86%)"
+  },
+  {
+    "color": "ochre",
+    "display": "Ochre",
+    "dark": "hsl(33, 17%, 23%)",
+    "light": "hsl(34, 17%, 25%)",
+    "highlight": "hsl(33, 57%, 52%)"
+  },
+  {
+    "color": "taupe",
+    "display": "Taupe",
+    "dark": "hsl(33, 7%, 24%)",
+    "light": "hsl(26, 5%, 26%)",
+    "highlight": "hsl(28, 28%, 62%)"
+  },
+  {
+    "color": "bisque",
+    "display": "Bisque",
+    "dark": "hsl(34, 5%, 28%)",
+    "light": "hsl(34, 5%, 30%)",
+    "highlight": "hsl(36, 84%, 90%)"
+  },
+  {
+    "color": "orange",
+    "display": "Orange",
+    "dark": "hsl(36, 23%, 24%)",
+    "light": "hsl(33, 22%, 26%)",
+    "highlight": "hsl(36, 88%, 59%)"
+  },
+  {
+    "color": "fulvous",
+    "display": "Fulvous",
+    "dark": "hsl(37, 22%, 23%)",
+    "light": "hsl(37, 21%, 25%)",
+    "highlight": "hsl(36, 71%, 54%)"
+  },
+  {
+    "color": "wenge",
+    "display": "Wenge",
+    "dark": "hsl(40, 3%, 21%)",
+    "light": "hsl(15, 3%, 23%)",
+    "highlight": "hsl(14, 8%, 43%)"
+  },
+  {
+    "color": "sage",
+    "display": "Sage",
+    "dark": "hsl(48, 4%, 25%)",
+    "light": "hsl(48, 4%, 27%)",
+    "highlight": "hsl(56, 26%, 70%)"
+  },
+  {
+    "color": "maize",
+    "display": "Maize",
+    "dark": "hsl(53, 14%, 26%)",
+    "light": "hsl(53, 13%, 28%)",
+    "highlight": "hsl(54, 84%, 73%)"
+  },
+  {
+    "color": "edgecombGray",
+    "display": "Edgecomb Gray",
+    "dark": "hsl(60, 1%, 27%)",
+    "light": "hsl(60, 1%, 29%)",
+    "highlight": "hsl(41, 21%, 85%)"
+  },
+  {
+    "color": "ecru",
+    "display": "Ecru",
+    "dark": "hsl(60, 5%, 25%)",
+    "light": "hsl(60, 4%, 27%)",
+    "highlight": "hsl(45, 32%, 69%)"
+  },
+  {
+    "color": "olive",
+    "display": "Olive",
+    "dark": "hsl(64, 17%, 20%)",
+    "light": "hsl(64, 15%, 22%)",
+    "highlight": "hsl(59, 54%, 37%)"
+  },
+  {
+    "color": "chartreuse",
+    "display": "Chartreuse",
+    "dark": "hsl(67, 21%, 24%)",
+    "light": "hsl(67, 19%, 26%)",
+    "highlight": "hsl(66, 92%, 64%)"
+  },
+  {
+    "color": "avocado",
+    "display": "Avocado",
+    "dark": "hsl(76, 15%, 20%)",
+    "light": "hsl(81, 15%, 22%)",
+    "highlight": "hsl(78, 57%, 36%)"
+  },
+  {
+    "color": "seaFoamGreen",
+    "display": "Sea Foam Green",
+    "dark": "hsl(100, 2%, 27%)",
+    "light": "hsl(120, 3%, 29%)",
+    "highlight": "hsl(106, 34%, 85%)"
+  },
+  {
+    "color": "green",
+    "display": "Green",
+    "dark": "hsl(117, 17%, 23%)",
+    "light": "hsl(114, 16%, 25%)",
+    "highlight": "hsl(114, 57%, 55%)"
+  },
+  {
+    "color": "celadon",
+    "display": "Celadon",
+    "dark": "hsl(120, 4%, 27%)",
+    "light": "hsl(132, 3%, 29%)",
+    "highlight": "hsl(118, 38%, 82%)"
+  },
+  {
+    "color": "viridian",
+    "display": "Viridian",
+    "dark": "hsl(158, 7%, 22%)",
+    "light": "hsl(163, 6%, 24%)",
+    "highlight": "hsl(160, 20%, 47%)"
+  },
+  {
+    "color": "verdigris",
+    "display": "Verdigris",
+    "dark": "hsl(175, 10%, 24%)",
+    "light": "hsl(180, 8%, 25%)",
+    "highlight": "hsl(179, 36%, 59%)"
+  },
+  {
+    "color": "skyblue",
+    "display": "SkyBlue",
+    "dark": "hsl(202, 8%, 26%)",
+    "light": "hsl(196, 8%, 28%)",
+    "highlight": "hsl(199, 64%, 78%)"
+  },
+  {
+    "color": "cerulean",
+    "display": "Cerulean",
+    "dark": "hsl(203, 16%, 22%)",
+    "light": "hsl(198, 14%, 24%)",
+    "highlight": "hsl(199, 51%, 46%)"
+  },
+  {
+    "color": "glaucous",
+    "display": "Glaucous",
+    "dark": "hsl(213, 7%, 24%)",
+    "light": "hsl(218, 8%, 26%)",
+    "highlight": "hsl(217, 34%, 60%)"
+  },
+  {
+    "color": "zaffre",
+    "display": "Zaffre",
+    "dark": "hsl(224, 22%, 20%)",
+    "light": "hsl(226, 19%, 22%)",
+    "highlight": "hsl(227, 81%, 38%)"
+  },
+  {
+    "color": "blue",
+    "display": "Blue",
+    "dark": "hsl(228, 17%, 24%)",
+    "light": "hsl(231, 15%, 26%)",
+    "highlight": "hsl(228, 63%, 60%)"
+  },
+  {
+    "color": "indigo",
+    "display": "Indigo",
+    "dark": "hsl(240, 8%, 23%)",
+    "light": "hsl(233, 7%, 25%)",
+    "highlight": "hsl(243, 25%, 53%)"
+  },
+  {
+    "color": "gray",
+    "display": "Grey",
+    "dark": "hsl(270, 2%, 24%)",
+    "light": "hsl(240, 1%, 26%)",
+    "highlight": "hsl(255, 6%, 64%)"
+  },
+  {
+    "color": "mauve",
+    "display": "Mauve",
+    "dark": "hsl(270, 6%, 28%)",
+    "light": "hsl(273, 6%, 30%)",
+    "highlight": "hsl(272, 83%, 86%)"
+  },
+  {
+    "color": "purple",
+    "display": "Purple",
+    "dark": "hsl(284, 17%, 22%)",
+    "light": "hsl(283, 17%, 24%)",
+    "highlight": "hsl(286, 55%, 47%)"
+  },
+  {
+    "color": "lilac",
+    "display": "Lilac",
+    "dark": "hsl(285, 3%, 26%)",
+    "light": "hsl(288, 3%, 28%)",
+    "highlight": "hsl(293, 20%, 74%)"
+  },
+  {
+    "color": "fuchsia",
+    "display": "Fuchsia",
+    "dark": "hsl(294, 15%, 25%)",
+    "light": "hsl(297, 15%, 27%)",
+    "highlight": "hsl(296, 88%, 70%)"
+  },
+  {
+    "color": "puce",
+    "display": "Puce",
+    "dark": "hsl(350, 5%, 25%)",
+    "light": "hsl(0, 4%, 27%)",
+    "highlight": "hsl(346, 33%, 71%)"
+  }
+];
 
 const QLAB5_COLORS = [
-    {
-      color: "lucasBlue",
-      display: "Lucas Blue",
-      dark: "#272c32",
-      light: "#2d3338",
-      highlight: "#0f2c52"
-    },
-    {
-      color: "midnight",
-      display: "Midnight",
-      dark: "#292938",
-      light: "#30303e",
-      highlight: "#161966"
-    },
-    {
-      color: "forest",
-      display: "Forest",
-      dark: "#2b312a",
-      light: "#323830",
-      highlight: "#22461e"
-    },
-    {
-      color: "plum",
-      display: "Plum",
-      dark: "#2c252d",
-      light: "#332c35",
-      highlight: "#35053d"
-    },
-    {
-      color: "cerulean",
-      display: "Cerulean",
-      dark: "#2d373e",
-      light: "#333d43",
-      highlight: "#3579a3"
-    },
-    {
-      color: "chocolate",
-      display: "Chocolate",
-      dark: "#312d2b",
-      light: "#373432",
-      highlight: "#422a20"
-    },
-    {
-      color: "viridian",
-      display: "Viridian",
-      dark: "#303836",
-      light: "#373e3c",
-      highlight: "#456a5b"
-    },
-    {
-      color: "blue",
-      display: "Blue",
-      dark: "#303344",
-      light: "#36394b",
-      highlight: "#465ad1"
-    },
-    {
-      color: "chestnut",
-      display: "Chestnut",
-      dark: "#322b28",
-      light: "#38312e",
-      highlight: "#4d240f"
-    },
-    {
-      color: "wenge",
-      display: "Wenge",
-      dark: "#333232",
-      light: "#3a3837",
-      highlight: "#534947"
-    },
-    {
-      color: "verdigris",
-      display: "Verdigris",
-      dark: "#333f3e",
-      light: "#3b4646",
-      highlight: "#549592"
-    },
-    {
-      color: "indigo",
-      display: "Indigo",
-      dark: "#32313c",
-      light: "#393841",
-      highlight: "#585495"
-    },
-    {
-      color: "cyan",
-      display: "Cyan",
-      dark: "#354746",
-      light: "#3b4d4e",
-      highlight: "#59bbbc"
-    },
-    {
-      color: "hotPink",
-      display: "Hot Pink",
-      dark: "#324330",
-      light: "#384a36",
-      highlight: "#5cc844"
-    },
-    {
-      color: "avocado",
-      display: "Avocado",
-      dark: "#33382a",
-      light: "#3a3e31",
-      highlight: "#5f8125"
-    },
-    {
-      color: "berry",
-      display: "Berry",
-      dark: "#342a2f",
-      light: "#3a3136",
-      highlight: "#64204b"
-    },
-    {
-      color: "glaucous",
-      display: "Glaucous",
-      dark: "#34383f",
-      light: "#3a3e46",
-      highlight: "#647eae"
-    },
-    {
-      color: "olive",
-      display: "Olive",
-      dark: "#38382b",
-      light: "#3f3f31",
-      highlight: "#6b6b20"
-    },
-    {
-      color: "violet",
-      display: "Violet",
-      dark: "#39293e",
-      light: "#3f3045",
-      highlight: "#711590"
-    },
-    {
-      color: "periwinkle",
-      display: "Periwinkle",
-      dark: "#37354a",
-      light: "#3d3b4f",
-      highlight: "#776bf6"
-    },
-    {
-      color: "skyBlue",
-      display: "Sky Blue",
-      dark: "#3c4248",
-      light: "#42484e",
-      highlight: "#7da3c1"
-    },
-    {
-      color: "crimson",
-      display: "Crimson",
-      dark: "#3b292b",
-      light: "#413032",
-      highlight: "#7e1821"
-    },
-    {
-      color: "purple",
-      display: "Purple",
-      dark: "#3a283f",
-      light: "#403045",
-      highlight: "#8819ac"
-    },
-    {
-      color: "green",
-      display: "Green",
-      dark: "#3a393c",
-      light: "#404042",
-      highlight: "#8e8a98"
-    },
-    {
-      color: "taupe",
-      display: "Taupe",
-      dark: "#3e3a35",
-      light: "#45403d",
-      highlight: "#91755e"
-    },
-    {
-      color: "maize",
-      display: "Maize",
-      dark: "#402b38",
-      light: "#46313e",
-      highlight: "#982068"
-    },
-    {
-      color: "rufous",
-      display: "Rufous",
-      dark: "#3c2a28",
-      light: "#423230",
-      highlight: "#9a2b19"
-    },
-    {
-      color: "ochre",
-      display: "Ochre",
-      dark: "#41372d",
-      light: "#483e33",
-      highlight: "#9e652d"
-    },
-    {
-      color: "ecru",
-      display: "Ecru",
-      dark: "#423f39",
-      light: "#494640",
-      highlight: "#9f9470"
-    },
-    {
-      color: "seafoamGreen",
-      display: "Seafoam Green",
-      dark: "#434742",
-      light: "#4a4d48",
-      highlight: "#a7bba1"
-    },
-    {
-      color: "yellow",
-      display: "Yellow",
-      dark: "#4a4731",
-      light: "#504e37",
-      highlight: "#afa539"
-    },
-    {
-      color: "edgecombGray",
-      display: "Edgecomb Gray",
-      dark: "#464543",
-      light: "#4c4a49",
-      highlight: "#b2aca2"
-    },
-    {
-      color: "vermilion",
-      display: "Vermilion",
-      dark: "#45312f",
-      light: "#4a3734",
-      highlight: "#b54536"
-    },
-    {
-      color: "mauve",
-      display: "Mauve",
-      dark: "#45404b",
-      light: "#4c4651",
-      highlight: "#b595d1"
-    },
-    {
-      color: "celadon",
-      display: "Celadon",
-      dark: "#3f463f",
-      light: "#474c45",
-      highlight: "#b6e0b3"
-    },
-    {
-      color: "sage",
-      display: "Sage",
-      dark: "#42403a",
-      light: "#474740",
-      highlight: "#bbb98f"
-    },
-    {
-      color: "lilac",
-      display: "Lilac",
-      dark: "#413c42",
-      light: "#484349",
-      highlight: "#be9fc1"
-    },
-    {
-      color: "puce",
-      display: "Puce",
-      dark: "#423a3c",
-      light: "#494042",
-      highlight: "#c28b99"
-    },
-    {
-      color: "fuchsia",
-      display: "Fuchsia",
-      dark: "#48314a",
-      light: "#4e3751",
-      highlight: "#c946d4"
-    },
-    {
-      color: "marigold",
-      display: "Marigold",
-      dark: "#493e2e",
-      light: "#504435",
-      highlight: "#cb8932"
-    },
-    {
-      color: "coral",
-      display: "Coral",
-      dark: "#483932",
-      light: "#503f38",
-      highlight: "#cc734d"
-    },
-    {
-      color: "orange",
-      display: "Orange",
-      dark: "#483b2d",
-      light: "#504334",
-      highlight: "#cc832f"
-    },
-    {
-      color: "lavender",
-      display: "Lavender",
-      dark: "#443b47",
-      light: "#4a414d",
-      highlight: "#cc91df"
-    },
-    {
-      color: "magenta",
-      display: "Magenta",
-      dark: "#494835",
-      light: "#504e3d",
-      highlight: "#cdc360"
-    },
-    {
-      color: "scarlet",
-      display: "Scarlet",
-      dark: "#482e2f",
-      light: "#4e3434",
-      highlight: "#d53a3b"
-    },
-    {
-      color: "fulvous",
-      display: "Fulvous",
-      dark: "#45392c",
-      light: "#4c3f32",
-      highlight: "#d78a31"
-    },
-    {
-      color: "chartreuse",
-      display: "Chartreuse",
-      dark: "#474b31",
-      light: "#4e5137",
-      highlight: "#e6fd52"
-    },
-    {
-      color: "red",
-      display: "Red",
-      dark: "#48302f",
-      light: "#4e3636",
-      highlight: "#e84944"
-    },
-    {
-      color: "gray",
-      display: "Gray",
-      dark: "#482d38",
-      light: "#4e323f",
-      highlight: "#ea337f"
-    },
-    {
-      color: "peach",
-      display: "Peach",
-      dark: "#493932",
-      light: "#4e4039",
-      highlight: "#ef895e"
-    },
-    {
-      color: "bastardAmber",
-      display: "Bastard Amber",
-      dark: "#4a4340",
-      light: "#504a47",
-      highlight: "#f6cab8"
-    },
-    {
-      color: "bisque",
-      display: "Bisque",
-      dark: "#4a4744",
-      light: "#514e4a",
-      highlight: "#fbe6c9"
-    }
-  ];
+  {
+    "color": "scarlet",
+    "display": "Scarlet",
+    "dark": "hsl(0, 21%, 23%)",
+    "light": "hsl(0, 19%, 26%)",
+    "highlight": "hsl(0, 61%, 52%)"
+  },
+  {
+    "color": "red",
+    "display": "Red",
+    "dark": "hsl(3, 20%, 23%)",
+    "light": "hsl(3, 18%, 26%)",
+    "highlight": "hsl(2, 60%, 52%)"
+  },
+  {
+    "color": "rufous",
+    "display": "Rufous",
+    "dark": "hsl(6, 20%, 20%)",
+    "light": "hsl(9, 17%, 22%)",
+    "highlight": "hsl(9, 73%, 31%)"
+  },
+  {
+    "color": "vermilion",
+    "display": "Vermilion",
+    "dark": "hsl(8, 19%, 22%)",
+    "light": "hsl(5, 17%, 25%)",
+    "highlight": "hsl(7, 55%, 48%)"
+  },
+  {
+    "color": "peach",
+    "display": "Peach",
+    "dark": "hsl(16, 18%, 24%)",
+    "light": "hsl(19, 16%, 27%)",
+    "highlight": "hsl(18, 59%, 58%)"
+  },
+  {
+    "color": "coral",
+    "display": "Coral",
+    "dark": "hsl(16, 19%, 24%)",
+    "light": "hsl(18, 17%, 26%)",
+    "highlight": "hsl(17, 60%, 57%)"
+  },
+  {
+    "color": "bastardAmber",
+    "display": "Bastard Amber",
+    "dark": "hsl(18, 7%, 27%)",
+    "light": "hsl(20, 6%, 30%)",
+    "highlight": "hsl(18, 45%, 75%)"
+  },
+  {
+    "color": "chestnut",
+    "display": "Chestnut",
+    "dark": "hsl(20, 10%, 17%)",
+    "light": "hsl(18, 10%, 20%)",
+    "highlight": "hsl(21, 68%, 17%)"
+  },
+  {
+    "color": "edgecombGray",
+    "display": "Edgecomb Gray",
+    "dark": "hsl(20, 2%, 27%)",
+    "light": "hsl(40, 2%, 29%)",
+    "highlight": "hsl(41, 11%, 73%)"
+  },
+  {
+    "color": "wenge",
+    "display": "Wenge",
+    "dark": "hsl(20, 3%, 20%)",
+    "light": "hsl(0, 2%, 22%)",
+    "highlight": "hsl(9, 8%, 31%)"
+  },
+  {
+    "color": "chocolate",
+    "display": "Chocolate",
+    "dark": "hsl(20, 7%, 18%)",
+    "light": "hsl(17, 7%, 21%)",
+    "highlight": "hsl(19, 35%, 21%)"
+  },
+  {
+    "color": "taupe",
+    "display": "Taupe",
+    "dark": "hsl(27, 8%, 23%)",
+    "light": "hsl(23, 6%, 25%)",
+    "highlight": "hsl(28, 21%, 49%)"
+  },
+  {
+    "color": "ochre",
+    "display": "Ochre",
+    "dark": "hsl(29, 19%, 22%)",
+    "light": "hsl(31, 17%, 24%)",
+    "highlight": "hsl(30, 55%, 43%)"
+  },
+  {
+    "color": "bisque",
+    "display": "Bisque",
+    "dark": "hsl(30, 6%, 28%)",
+    "light": "hsl(34, 5%, 30%)",
+    "highlight": "hsl(35, 42%, 79%)"
+  },
+  {
+    "color": "orange",
+    "display": "Orange",
+    "dark": "hsl(32, 24%, 23%)",
+    "light": "hsl(32, 21%, 26%)",
+    "highlight": "hsl(32, 67%, 52%)"
+  },
+  {
+    "color": "fulvous",
+    "display": "Fulvous",
+    "dark": "hsl(34, 22%, 22%)",
+    "light": "hsl(33, 19%, 25%)",
+    "highlight": "hsl(32, 63%, 46%)"
+  },
+  {
+    "color": "marigold",
+    "display": "Marigold",
+    "dark": "hsl(36, 23%, 23%)",
+    "light": "hsl(36, 21%, 26%)",
+    "highlight": "hsl(35, 66%, 52%)"
+  },
+  {
+    "color": "ecru",
+    "display": "Ecru",
+    "dark": "hsl(40, 7%, 24%)",
+    "light": "hsl(45, 6%, 27%)",
+    "highlight": "hsl(47, 23%, 56%)"
+  },
+  {
+    "color": "sage",
+    "display": "Sage",
+    "dark": "hsl(51, 6%, 24%)",
+    "light": "hsl(60, 4%, 27%)",
+    "highlight": "hsl(55, 18%, 58%)"
+  },
+  {
+    "color": "maize",
+    "display": "Maize",
+    "dark": "hsl(54, 16%, 25%)",
+    "light": "hsl(54, 13%, 28%)",
+    "highlight": "hsl(54, 62%, 63%)"
+  },
+  {
+    "color": "yellow",
+    "display": "Yellow",
+    "dark": "hsl(58, 20%, 24%)",
+    "light": "hsl(55, 19%, 26%)",
+    "highlight": "hsl(54, 67%, 57%)"
+  },
+  {
+    "color": "olive",
+    "display": "Olive",
+    "dark": "hsl(60, 14%, 19%)",
+    "light": "hsl(60, 13%, 22%)",
+    "highlight": "hsl(60, 54%, 29%)"
+  },
+  {
+    "color": "chartreuse",
+    "display": "Chartreuse",
+    "dark": "hsl(69, 21%, 24%)",
+    "light": "hsl(67, 18%, 27%)",
+    "highlight": "hsl(69, 72%, 58%)"
+  },
+  {
+    "color": "avocado",
+    "display": "Avocado",
+    "dark": "hsl(81, 14%, 19%)",
+    "light": "hsl(86, 13%, 22%)",
+    "highlight": "hsl(81, 55%, 29%)"
+  },
+  {
+    "color": "seafoamGreen",
+    "display": "Seafoam Green",
+    "dark": "hsl(105, 3%, 27%)",
+    "light": "hsl(108, 3%, 29%)",
+    "highlight": "hsl(106, 21%, 73%)"
+  },
+  {
+    "color": "green",
+    "display": "Green",
+    "dark": "hsl(108, 18%, 22%)",
+    "light": "hsl(111, 16%, 25%)",
+    "highlight": "hsl(109, 50%, 47%)"
+  },
+  {
+    "color": "celadon",
+    "display": "Celadon",
+    "dark": "hsl(120, 4%, 26%)",
+    "light": "hsl(111, 5%, 29%)",
+    "highlight": "hsl(115, 26%, 70%)"
+  },
+  {
+    "color": "forest",
+    "display": "Forest",
+    "dark": "hsl(120, 8%, 18%)",
+    "light": "hsl(120, 7%, 21%)",
+    "highlight": "hsl(116, 41%, 21%)"
+  },
+  {
+    "color": "viridian",
+    "display": "Viridian",
+    "dark": "hsl(154, 7%, 21%)",
+    "light": "hsl(154, 6%, 23%)",
+    "highlight": "hsl(157, 22%, 37%)"
+  },
+  {
+    "color": "verdigris",
+    "display": "Verdigris",
+    "dark": "hsl(180, 10%, 23%)",
+    "light": "hsl(175, 9%, 25%)",
+    "highlight": "hsl(176, 28%, 48%)"
+  },
+  {
+    "color": "cyan",
+    "display": "Cyan",
+    "dark": "hsl(180, 15%, 24%)",
+    "light": "hsl(180, 14%, 27%)",
+    "highlight": "hsl(181, 51%, 59%)"
+  },
+  {
+    "color": "cerulean",
+    "display": "Cerulean",
+    "dark": "hsl(203, 15%, 21%)",
+    "light": "hsl(205, 14%, 23%)",
+    "highlight": "hsl(203, 51%, 38%)"
+  },
+  {
+    "color": "skyBlue",
+    "display": "Sky Blue",
+    "dark": "hsl(205, 9%, 25%)",
+    "light": "hsl(203, 9%, 28%)",
+    "highlight": "hsl(206, 40%, 65%)"
+  },
+  {
+    "color": "glaucous",
+    "display": "Glaucous",
+    "dark": "hsl(218, 10%, 23%)",
+    "light": "hsl(213, 9%, 25%)",
+    "highlight": "hsl(219, 27%, 48%)"
+  },
+  {
+    "color": "lucasBlue",
+    "display": "Lucas Blue",
+    "dark": "hsl(222, 11%, 18%)",
+    "light": "hsl(216, 10%, 20%)",
+    "highlight": "hsl(215, 69%, 18%)"
+  },
+  {
+    "color": "blue",
+    "display": "Blue",
+    "dark": "hsl(231, 18%, 23%)",
+    "light": "hsl(231, 16%, 25%)",
+    "highlight": "hsl(232, 50%, 49%)"
+  },
+  {
+    "color": "midnight",
+    "display": "Midnight",
+    "dark": "hsl(236, 16%, 19%)",
+    "light": "hsl(240, 13%, 22%)",
+    "highlight": "hsl(10, 75%, 2%)"
+  },
+  {
+    "color": "periwinkle",
+    "display": "Periwinkle",
+    "dark": "hsl(246, 17%, 25%)",
+    "light": "hsl(246, 15%, 27%)",
+    "highlight": "hsl(245, 62%, 61%)"
+  },
+  {
+    "color": "indigo",
+    "display": "Indigo",
+    "dark": "hsl(246, 9%, 21%)",
+    "light": "hsl(247, 7%, 24%)",
+    "highlight": "hsl(244, 28%, 41%)"
+  },
+  {
+    "color": "gray",
+    "display": "Gray",
+    "dark": "hsl(260, 3%, 23%)",
+    "light": "hsl(240, 2%, 25%)",
+    "highlight": "hsl(258, 5%, 51%)"
+  },
+  {
+    "color": "mauve",
+    "display": "Mauve",
+    "dark": "hsl(270, 7%, 27%)",
+    "light": "hsl(273, 7%, 30%)",
+    "highlight": "hsl(271, 52%, 75%)"
+  },
+  {
+    "color": "purple",
+    "display": "Purple",
+    "dark": "hsl(284, 21%, 20%)",
+    "light": "hsl(286, 19%, 23%)",
+    "highlight": "hsl(285, 75%, 34%)"
+  },
+  {
+    "color": "violet",
+    "display": "Violet",
+    "dark": "hsl(284, 22%, 20%)",
+    "light": "hsl(286, 19%, 23%)",
+    "highlight": "hsl(285, 74%, 37%)"
+  },
+  {
+    "color": "lilac",
+    "display": "Lilac",
+    "dark": "hsl(288, 4%, 25%)",
+    "light": "hsl(300, 4%, 27%)",
+    "highlight": "hsl(294, 15%, 62%)"
+  },
+  {
+    "color": "lavender",
+    "display": "Lavender",
+    "dark": "hsl(290, 9%, 25%)",
+    "light": "hsl(285, 8%, 28%)",
+    "highlight": "hsl(286, 38%, 64%)"
+  },
+  {
+    "color": "plum",
+    "display": "Plum",
+    "dark": "hsl(293, 11%, 16%)",
+    "light": "hsl(287, 9%, 19%)",
+    "highlight": "hsl(292, 86%, 12%)"
+  },
+  {
+    "color": "fuchsia",
+    "display": "Fuchsia",
+    "dark": "hsl(295, 20%, 24%)",
+    "light": "hsl(298, 18%, 27%)",
+    "highlight": "hsl(295, 68%, 57%)"
+  },
+  {
+    "color": "magenta",
+    "display": "Magenta",
+    "dark": "hsl(322, 21%, 21%)",
+    "light": "hsl(325, 18%, 24%)",
+    "highlight": "hsl(324, 65%, 39%)"
+  },
+  {
+    "color": "berry",
+    "display": "Berry",
+    "dark": "hsl(324, 11%, 18%)",
+    "light": "hsl(318, 9%, 21%)",
+    "highlight": "hsl(324, 50%, 24%)"
+  },
+  {
+    "color": "hotPink",
+    "display": "Hot Pink",
+    "dark": "hsl(336, 24%, 23%)",
+    "light": "hsl(333, 21%, 25%)",
+    "highlight": "hsl(335, 64%, 50%)"
+  },
+  {
+    "color": "puce",
+    "display": "Puce",
+    "dark": "hsl(345, 6%, 24%)",
+    "light": "hsl(347, 7%, 27%)",
+    "highlight": "hsl(344, 23%, 59%)"
+  },
+  {
+    "color": "crimson",
+    "display": "Crimson",
+    "dark": "hsl(353, 18%, 20%)",
+    "light": "hsl(357, 16%, 22%)",
+    "highlight": "hsl(354, 68%, 31%)"
+  }
+];
 
-  let selectedVersion = "";
+  
   const versionSelector = document.querySelector('.version-select');
   const qlabVersions = versionSelector.querySelectorAll('img');
+  const versionLabels = versionSelector.querySelectorAll('.version-label');
   const colorContainer = document.querySelector('.color-container');
+  const displayText = document.getElementById("text-display");
+  const syntaxSelector = document.querySelector(".syntax-options");
+  const syntaxChoice = syntaxSelector.querySelectorAll('input');
+
+  let selectedVersion;
   let allColors;
   let selectedColor;
+  let displayTimer;
+  let selectedSyntax = "color-quotations";
+  let clipboardContent;
+  let appId;
  
-  
   qlabVersions.forEach((img) => {
     img.addEventListener('click', () => {
         qlabVersions.forEach((img) => {
@@ -639,39 +648,98 @@ const QLAB5_COLORS = [
         });
     });
 
-
-
+    syntaxChoice.forEach((radio) => {
+      radio.addEventListener('click', () => {
+          selectedSyntax = radio.id;
+      });
+  });
+  
 function displayColors(version) {
-  version == "qlab4" ? selectedVersion= QLAB4_COLORS : selectedVersion = QLAB5_COLORS;
+  if (version == "qlab4") {
+    selectedVersion= QLAB4_COLORS;
+    appId = "com.figure53.QLab.4"
+  } else {
+    selectedVersion = QLAB5_COLORS;
+    appId = "com.figure53.QLab.5";
+  }
   colorContainer.innerHTML = "<div></div>";
 
   selectedVersion.forEach((color) => {
       colorContainer.innerHTML += `
-      <div class="color" style="border-color: ${color.highlight}" id="${color.color}">
+      <div class="color" id="${color.color}">
       <div class="dark" style="background-color: ${color.dark};">${color.display}</div>
       <div class="light" style="background-color: ${color.light};"></div>
   </div>
   `
   });
-
-  colorEvents();
+  colorEvents(); // Updates event listeners for selected version
 };
+
+
 
 function colorEvents() {
   allColors = document.querySelectorAll('.color');
 
   allColors.forEach((color) => {
     color.addEventListener('click', () => {
-      selectedColor = color.id;
-      navigator.clipboard.writeText(selectedColor);
+      addColorToClipboard(color.id);
     })
   });
 
   allColors.forEach((color) => {
-    color.addEventListener('mouseover', () => {
+    color.addEventListener('mouseenter', () => {
       selectedColor = color.id;
-      color.classList.add('.color-hover')
+      var colorObject = selectedVersion.filter(obj => {
+        return obj.color === selectedColor;
+      })
+      document.getElementById(selectedColor).style.boxShadow = `0 0 10px ${colorObject[0].highlight}`;
     })
   });
 
-}
+allColors.forEach((color) => {
+    color.addEventListener('mouseleave', () => {
+      selectedColor = color.id;
+      var colorObject = selectedVersion.filter(obj => {
+        return obj.color === selectedColor;
+      });
+      document.getElementById(selectedColor).style.boxShadow = "none";
+    });
+  });
+};
+
+
+function addColorToClipboard(selectedColor) {
+  let clipboardString;
+  let displayString;
+
+  switch (selectedSyntax) {
+    case 'color-quotations':
+      clipboardString = `"${selectedColor}"`;
+      displayString = `"${selectedColor}" copied to clipboard`;
+      break;
+    case 'color-only':
+      clipboardString = `${selectedColor}`;
+      displayString = `${selectedColor} copied to clipboard`;
+      break;
+    case 'color-syntax':
+      clipboardString = `
+      tell application id "${appId}" to tell front workspace
+      set selectedCues to items of (selected as list)
+      repeat with theCue in selectedCues
+        set q color of theCue to "${selectedColor}"
+      end repeat
+      end tell
+      `
+      displayString = `"${selectedColor}" (with script) copied to clipboard`
+  };
+
+  navigator.clipboard.writeText(clipboardString);
+  displayText.textContent = displayString;
+  displayText.style.padding = "20px"
+
+  clearTimeout(displayTimer);
+  displayTimer = setTimeout(() => {
+    displayText.textContent = "";
+    displayText.style.padding = "";
+    }, "2000");
+};
