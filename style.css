@@ -239,7 +239,7 @@ footer a {
     border-radius: 24px;
     padding: 16px;
     margin: auto;
-    box-shadow: 0 0 1em var(--lightPurple);
+    box-shadow: 0 0 0.5em var(--lightPurple);
     top: 0;
     right: 0;
     bottom: 0;
