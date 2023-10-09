@@ -636,6 +636,7 @@ const QLAB5_COLORS = [
   let selectedSyntax = "color-quotations";
   let clipboardContent;
   let appId;
+  let highlightColor;
  
   qlabVersions.forEach((img) => {
     img.addEventListener('click', () => {
@@ -693,6 +694,7 @@ function colorEvents() {
         return obj.color === selectedColor;
       })
       document.getElementById(selectedColor).style.boxShadow = `0 0 10px ${colorObject[0].highlight}`;
+      highlightColor = colorObject[0].highlight;
     })
   });
 
@@ -734,12 +736,40 @@ function addColorToClipboard(selectedColor) {
   };
 
   navigator.clipboard.writeText(clipboardString);
+  displayText.style.border = `solid ${highlightColor}`;
   displayText.textContent = displayString;
   displayText.style.padding = "20px"
 
   clearTimeout(displayTimer);
   displayTimer = setTimeout(() => {
     displayText.textContent = "";
+    displayText.style.border = `none`;
     displayText.style.padding = "";
     }, "2000");
 };
+
+const instructionsBtn = document.getElementById("instructions-btn");
+var instructionsWindow = document.getElementById("instructions-popup");
+var closeButton = document.getElementById("close-btn");
+
+instructionsBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  if (instructionsWindow.style.display === "block") {
+    instructionsWindow.style.opacity = 0;
+   setTimeout(function () {
+    instructionsWindow.style.display = 'none'
+   }, 400);
+  } else {
+    instructionsWindow.style.display = "block";
+    setTimeout(function () {
+        instructionsWindow.style.opacity = 1;
+      }, 40);
+  }
+});
+
+closeButton.addEventListener("click", function() {
+    instructionsWindow.style.opacity = 0;
+    setTimeout(function () {
+     instructionsWindow.style.display = 'none'
+    }, 400);
+});

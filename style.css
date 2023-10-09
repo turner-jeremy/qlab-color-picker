@@ -2,13 +2,14 @@
     --qlabBackground: #2c2c2c;
     --qlabBorder: #323232;
     --qlabText: #c0c0c0;
+    --lightPurple: hsl(276, 94%, 74%);
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-  font-family: Montserrat, Verdana, Sans-Serif
+  font-family: Montserrat, Verdana, Sans-Serif;
 }
 
 body, html {
@@ -19,7 +20,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     background-color: var(--qlabBackground);
 }
 
@@ -29,13 +29,24 @@ body {
     flex-direction: column;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
+
 h1 {
     color: var(--qlabText);
     text-align: center;
+    margin: 0;
 }
+
 .version-select {
     display: flex;
     gap: 80px;
+    
 }
 
 .version-select img {
@@ -43,6 +54,7 @@ h1 {
     padding: 20px;
     border-radius: 40%;
     margin: 0 20px;
+    transition: 0.2s;
 }
 
 .version-select img:hover {
@@ -51,13 +63,17 @@ h1 {
 }
 
 .selected {
-    box-shadow: inset 0 0 2em hsl(276, 94%, 74%);
+    box-shadow: inset 0 0 2em var(--lightPurple);
+    animation: dipSize 0.2s;
+}
+
+@keyframes dipSize {
+    50% {transform: scale(95%);}
 }
 
 .syntax-options {
     color: var(--qlabText);
-    display: block;
-    padding: 12px 0;
+    padding: 8px 0;
 }
 
 .radio-button {
@@ -69,16 +85,16 @@ h1 {
 
 input[type="radio"] {
     display: inline;
-appearance: none;
-margin: 0;
-width: 1.15em;
-height: 1.15em;
-border: 0.15em solid var(--qlabText);
-border-radius: 50%;
-color: var(--qlabText);
-transform: translateY(+0.075em);
-display: grid;
-place-content: center;
+    appearance: none;
+    margin: 0;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--qlabText);
+    border-radius: 50%;
+    color: var(--qlabText);
+    z-index: -1;
+    display: grid;
+    place-content: center;
 }
 
 input[type="radio"]::before {
@@ -89,7 +105,7 @@ input[type="radio"]::before {
     border-radius: 50%;
     transform: scale(0);
     transition: 200ms transform ease-in-out;
-    box-shadow: inset 1em 1em hsl(276, 94%, 74%);
+    box-shadow: inset 1em 1em var(--lightPurple);
   }
 
 input[type="radio"]:checked::before {
@@ -99,6 +115,7 @@ input[type="radio"]:checked::before {
 .radio-button + .radio-button {
     margin-top: 1em;
 }
+
 #text-display {
     position: absolute;
     bottom: 50vh;
@@ -131,6 +148,7 @@ input[type="radio"]:checked::before {
         border: none;
     }
 }
+
 .color-container {
     display:flex;
     flex-wrap: wrap;
@@ -139,6 +157,7 @@ input[type="radio"]:checked::before {
     padding: 12px;
     gap: 8px;
 }
+
 .color {
     display: flex;
     text-align: center;
@@ -172,9 +191,6 @@ input[type="radio"]:checked::before {
     border-bottom-right-radius: 20px;
 }
 
-footer {
-    /* margin: em 0; */
-}
 footer p {
     text-align: center;
     color: var(--qlabText);
@@ -185,4 +201,87 @@ footer p {
 footer a {
     text-decoration: none;
     color: var(--qlabText);
+}
+
+#instructions-btn {
+    margin: 8px 0 0 0;
+    width: 120px;
+    padding: 6px 12px;
+    background-color: var(--qlabBorder);
+    border-radius: 8px;
+    color: var(--qlabText);
+    transition-duration: 0.4s;
+    border: 1px solid var(--qlabText);
+}
+
+#instructions-btn:hover {
+    box-shadow: 0 0 1em var(--lightPurple);
+    cursor: pointer;
+}    
+
+#instructions-popup {
+    position: fixed;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background-color: rgba(169, 169, 169, 0.199);
+    width: 100%;
+    height: 100%;
+}
+
+#instructions-window {
+    position: fixed;
+    width: 600px;
+    height: 550px;
+    background: var(--qlabBackground);
+    color: var(--qlabText);
+    border: 24px solid var(--qlabBorder);
+    border-radius: 24px;
+    padding: 16px;
+    margin: auto;
+    box-shadow: 0 0 1em var(--lightPurple);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }    
+
+#instructions-header {
+    text-align: center;
+}
+
+#instructions-header p {
+    font-size: 12px;
+    font-style: italic;
+    margin: 0 0 8px 0;
+}
+a {
+    text-decoration: none;
+    color: var(--qlabText);
+}
+
+#instructions-text h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+#instructions-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#close-btn {
+    background-color: var(--qlabBorder);
+    border: 1px solid var(--qlabText);
+    border-radius: 12px;
+    color: var(--qlabText);
+    margin-top: 12px;
+    padding: 12px 18px;
+    position: relative;
+    left: 92%;
+    bottom: 100%;
+}
+
+#close-btn:hover {
+    cursor: pointer;
 }

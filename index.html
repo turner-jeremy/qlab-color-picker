@@ -9,31 +9,64 @@
 </head>
 <body>
     <div class="container">
-        <h1>QLab Colour Picker</h1>
+        <header>
+            <h1>QLab Colour Picker</h1>
+            <button id="instructions-btn">Instructions</button>
+        </header>  
+
+        <div id="instructions-popup">
+            <div id="instructions-window">
+                <div id="instructions-header">
+                    <h1>QLab Colour Picker</h1>
+                    <p>Made by <a href="https://github.com/turner-jeremy/qlab-color-picker" target="_blank">Jeremy Turner</a></p>
+                </div>
+                <div id="instructions-text">
+                    <br>
+                    <h4>Instructions</h4>
+                    <p>This is a simple interface to display the available colours in QLab (including <em>hidden</em> colours!), and copy the name to your clipboard for adding to Qlab scripts.</p>
+                    <ol>
+                        <li>Select the version of QLab you're using (Qlab4 or QLab 5)</li>
+                        <li>Select the style you want to add to your clipboard
+                            <ul>
+                                <li>Just the name of the colour</li>
+                                <li>Surround colour name in quotation marks (just to avoid forgetting them)</li>
+                                <li>Provides the entire script for assigning colour to selected cues.</li>
+                            </ul>
+                        </li>
+                        <li>Select the colour of your choice (Colours are sorted by hue).</li>
+                        <li>Paste it into your QLab script!</li>
+                    </ol>
+                </div>
+                <button id="close-btn">X</button>
+            </div>   
+        </div>
         <div class="version-select">
                 <img src="./images/qlab4-logo.png" alt="QLab 4 Logo" id="qlab4" title="QLab 4">
                 <img src="./images/qlab5-logo.png" alt="QLab 5 Logo" id="qlab5" title="QLab 5">
         </div>
-        <div class="syntax-options">
-            <label class="radio-button">
-                <input type="radio" name="syntax" checked="checked" id="color-quotations">
-                Colour with quotation marks
-            </label>
-            <label class="radio-button">
-                <input type="radio" name="syntax" id="color-only">
-                Colour only
-            </label>
-            <label class="radio-button">
-                <input type="radio" name="syntax" id="color-syntax">
-                Include script syntax for selected cue
-            </label>
-            <div id="text-display"></div>
+        <div class="buttons-container">
+            <div class="syntax-options">
+                <label class="radio-button">
+                    <input type="radio" name="syntax" checked="checked" id="color-only">
+                    Colour only
+                </label>
+                <label class="radio-button">
+                    <input type="radio" name="syntax" id="color-quotations">
+                    Colour with quotation marks
+                </label>
+                <label class="radio-button">
+                    <input type="radio" name="syntax" id="color-syntax">
+                    Include script syntax for selected cue
+                </label>
+                <div id="text-display"></div>
+            </div>
         </div>
         <div class="color-container"></div>
     </div>
     <footer>
-        <p class="left-align"> 2023 &#169; <a href="https://www.jeremyturner.com.au">Jeremy Turner</a></p>
+        <p class="left-align"> 2023 &#169; <a href="https://www.jeremyturner.com.au" target="_blank">Jeremy Turner</a></p>
         <p class="right-align">Not affiliated with Figure 53, just made for fun.</p>
     </footer>
+    
 </body>
 </html>
