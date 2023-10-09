@@ -250,6 +250,9 @@ footer a {
     text-align: center;
 }
 
+#instructions-header h1 {
+    font-size: 24px;
+}
 #instructions-header p {
     font-size: 12px;
     font-style: italic;
@@ -267,19 +270,19 @@ a {
 
 #instructions-text {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 24px;
 }
 
 #close-btn {
+    position: relative;
     background-color: var(--qlabBorder);
     border: 1px solid var(--qlabText);
     border-radius: 12px;
     color: var(--qlabText);
     margin-top: 12px;
     padding: 12px 18px;
-    position: relative;
     left: 92%;
-    bottom: 100%;
+    bottom: 455px;
 }
 
 #close-btn:hover {
