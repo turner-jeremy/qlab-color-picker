@@ -134,7 +134,7 @@ const QLAB4_COLORS = [
   },
   {
     "color": "seaFoamGreen",
-    "display": "Sea Foam Green",
+    "display": "Seafoam Green",
     "dark": "hsl(100, 2%, 27%)",
     "light": "hsl(120, 3%, 29%)",
     "highlight": "hsl(106, 34%, 85%)"
@@ -169,7 +169,7 @@ const QLAB4_COLORS = [
   },
   {
     "color": "skyblue",
-    "display": "SkyBlue",
+    "display": "Sky Blue",
     "dark": "hsl(202, 8%, 26%)",
     "light": "hsl(196, 8%, 28%)",
     "highlight": "hsl(199, 64%, 78%)"

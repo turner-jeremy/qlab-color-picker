@@ -161,7 +161,10 @@ input[type="radio"]:checked::before {
 .color {
     display: flex;
     text-align: center;
+
     flex-direction: column;
+    word-wrap:break-word;
+    hyphens: manual;
     width: 120px;
     height: 120px;
     margin: 2px;
@@ -177,9 +180,13 @@ input[type="radio"]:checked::before {
 .light,
 .dark {
     min-height: 50px;
+    padding: 10% 0;
     flex: 2;
-    line-height: 50px;
-    display: inline-box;
+    vertical-align: bottom;
+    /* line-height: 50px; */
+    inline-size: 120px;
+
+    /* display: inline; */
 }
 
 .dark {
