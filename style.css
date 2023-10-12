@@ -117,8 +117,7 @@ input[type="radio"]:checked::before {
 }
 
 #text-display {
-    position:-webkit-sticky;
-    position:sticky;
+    position: fixed;
     bottom: 50vh;
     margin: 0;
     background-color: var(--qlabBackground);
